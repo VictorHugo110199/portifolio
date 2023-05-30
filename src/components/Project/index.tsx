@@ -22,75 +22,165 @@ interface ReposType {
 }
 
 export const Project = (): JSX.Element => {
-  const [repositories, setRepositories] = useState<ReposType[]>([]);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      const data = await fetch(
-        `https://api.github.com/users/${userData.githubUser}/repos?sort=created&direction=desc`
-      );
-
-      const json = await data.json();
-
-      setRepositories(json);
-
-      return json;
-    };
-
-    fetchData();
-  }, []);
 
   return (
     <>
-      {repositories &&
-        repositories?.map?.((repository) => (
-          <ProjectWrapper key={repository.id}>
+      
+          <ProjectWrapper>
             <ProjectTitle
               as="h2"
               type="heading3"
               css={{ marginBottom: "$3" }}
               color="grey4"
             >
-              {repository.name}
+              Lista de Contatos
             </ProjectTitle>
 
             <ProjectStack>
               <Text type="body2" color="grey2">
                 Primary Language:
               </Text>
-              {repository.language ? (
                 <ProjectStackTech>
                   <Text color="grey2" type="body2">
-                    {repository.language}
+                    TypeScript
                   </Text>
                 </ProjectStackTech>
-              ) : (
-                <ProjectStackTech>
-                  <Text color="grey2" type="body2">
-                    Primary language not identified
-                  </Text>
-                </ProjectStackTech>
-              )}
             </ProjectStack>
 
             <Text type="body1" color="grey2">
-              {repository.description?.substring(0, 129)}
+            Projeto Full-Stack de uma lista de contatos
             </Text>
             <ProjectLinks>
-              <ProjectLink target="_blank" href={repository.html_url}>
+              <ProjectLink target="_blank" href="https://github.com/VictorHugo110199/lista-de-contatos-back-end">
                 <FaGithub /> Github Code
               </ProjectLink>
-              {repository.homepage && (
-                <ProjectLink
+                {/* <ProjectLink
                   target="_blank"
-                  href={`https://${repository.homepage}`}
+                  href="https://motor-shop-front.vercel.app/"
                 >
-                  <FaShare /> See demo
-                </ProjectLink>
-              )}
+                  <FaShare /> Deploy
+                </ProjectLink> */}
+              
             </ProjectLinks>
           </ProjectWrapper>
-        ))}
+
+
+          <ProjectWrapper>
+            <ProjectTitle
+              as="h2"
+              type="heading3"
+              css={{ marginBottom: "$3" }}
+              color="grey4"
+            >
+              ezBracket
+            </ProjectTitle>
+
+            <ProjectStack>
+              <Text type="body2" color="grey2">
+                Primary Language:
+              </Text>
+                <ProjectStackTech>
+                  <Text color="grey2" type="body2">
+                    TypeScript
+                  </Text>
+                </ProjectStackTech>
+            </ProjectStack>
+
+            <Text type="body1" color="grey2">
+            Api de geração de chaveamento de campeonatos
+            </Text>
+            <ProjectLinks>
+              <ProjectLink target="_blank" href="https://github.com/VictorHugo110199/ezbrackt-server">
+                <FaGithub /> Github Code
+              </ProjectLink>
+                <ProjectLink
+                  target="_blank"
+                  href="https://ezbracket2.onrender.com/"
+                >
+                  <FaShare /> Deploy Api
+                </ProjectLink>
+              
+            </ProjectLinks>
+          </ProjectWrapper>
+
+
+          <ProjectWrapper>
+            <ProjectTitle
+              as="h2"
+              type="heading3"
+              css={{ marginBottom: "$3" }}
+              color="grey4"
+            >
+              Kenzie Hub
+            </ProjectTitle>
+
+            <ProjectStack>
+              <Text type="body2" color="grey2">
+                Primary Language:
+              </Text>
+                <ProjectStackTech>
+                  <Text color="grey2" type="body2">
+                    TypeScript
+                  </Text>
+                </ProjectStackTech>
+            </ProjectStack>
+
+            <Text type="body1" color="grey2">
+            Aplicação de gerenciamento e listagem de linguagens de programação
+            </Text>
+            <ProjectLinks>
+              <ProjectLink target="_blank" href="https://github.com/VictorHugo110199/project-kenzie-hub">
+                <FaGithub /> Github Code
+              </ProjectLink>
+                <ProjectLink
+                  target="_blank"
+                  href="https://kenziehub-drab.vercel.app/"
+                >
+                  <FaShare /> Deploy
+                </ProjectLink>
+              
+            </ProjectLinks>
+          </ProjectWrapper>
+
+
+          <ProjectWrapper>
+            <ProjectTitle
+              as="h2"
+              type="heading3"
+              css={{ marginBottom: "$3" }}
+              color="grey4"
+            >
+              Motor-Shop
+            </ProjectTitle>
+
+            <ProjectStack>
+              <Text type="body2" color="grey2">
+                Primary Language:
+              </Text>
+                <ProjectStackTech>
+                  <Text color="grey2" type="body2">
+                    JavaScript
+                  </Text>
+                </ProjectStackTech>
+            </ProjectStack>
+
+            <Text type="body1" color="grey2">
+            E-commerce de carro
+            </Text>
+            <ProjectLinks>
+              <ProjectLink target="_blank" href="https://github.com/orgs/grupo24-t13-marcelo/repositories">
+                <FaGithub /> Github Code
+              </ProjectLink>
+                <ProjectLink
+                  target="_blank"
+                  href="https://motor-shop-front.vercel.app/"
+                >
+                  <FaShare /> Deploy
+                </ProjectLink>
+              
+            </ProjectLinks>
+          </ProjectWrapper>
+        
     </>
   );
 };

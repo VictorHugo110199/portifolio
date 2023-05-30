@@ -12,7 +12,7 @@ import { Contacts } from "@/components/Contacts";
 import { stackData } from "@/utils/stackData";
 import { userData } from "@/utils/userData";
 
-import { FaGithub } from "react-icons/fa";
+import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 
 // Page Style
 import {
@@ -28,28 +28,17 @@ import {
 } from "./style";
 
 export const Home = (): JSX.Element => {
-  const gihubUrl = `https://github.com/${userData.githubUser}`;
-  const portfolioUrl = `https://github.com/${userData.githubUser}/my-portfolio`;
+  const gihubUrl = `https://github.com/VictorHugo110199`;
 
   return (
     <main id="home">
       <Header>
         <Container>
           <HeaderContent>
-            <Flex>
-              <UserImage
-                src={`https://github.com/${userData.githubUser}.png`}
-                alt={userData.nameUser}
-                title={userData.nameUser}
-                width={"48px"}
-                height={"48px"}
-              />
-              <Text color="grey4">Olá, eu sou {userData.nameUser}</Text>
-            </Flex>
             <Text as="h1" type="heading1" color="grey5">
-              Eu{" "}
+              Desenvolvedor{" "}
               <Text as="span" type="heading1" color="brand1">
-                adoro
+                Full-Stack,
               </Text>{" "}
               criar e{" "}
               <Text as="span" type="heading1" color="brand1">
@@ -61,12 +50,6 @@ export const Home = (): JSX.Element => {
               Explore meu repositorio publico e teste meus projetos!
             </Text>
             <HeaderButtonsArea>
-              <Button as="a" type="primary" href="#projects">
-                Meus Projetos
-              </Button>
-              <Button as="a" type="outline" target="_blank" href={portfolioUrl}>
-                Portfolio source code
-              </Button>
               <Button
                 color="grey5"
                 as="a"
@@ -76,6 +59,15 @@ export const Home = (): JSX.Element => {
                 href={gihubUrl}
               >
                 <FaGithub />
+              </Button>
+              <Button
+                className="linkedin"
+                type="circle"
+                as="a"
+                target="_blank"
+                href={`https://linkedin.com/in/${userData.linkedinUser}`}
+              >
+                <FaLinkedinIn />
               </Button>
             </HeaderButtonsArea>
             <StackCards>
@@ -96,7 +88,7 @@ export const Home = (): JSX.Element => {
               <Text as="p" type="body1" color="grey2">
                 Alguns exemplos{" "}
                 <Text as="span" color="brand5">
-                  legais de se explorar!
+                  legais de se explorar e testar!
                 </Text>
               </Text>
             </ProjectsAreaSocialMediaMessage>
