@@ -36,18 +36,19 @@ export const Home = (): JSX.Element => {
         <Container>
           <HeaderContent>
             <Text as="h1" type="heading1" color="grey5">
-              Desenvolvedor{" "}
+              Olá eu sou o{" "}
               <Text as="span" type="heading1" color="brand1">
-                Full-Stack,
+                Victor,
               </Text>{" "}
-              criar e{" "}
+              <br />
+              desenvolvedor{" "}
               <Text as="span" type="heading1" color="brand1">
-                desenvolver
+                Full-Stack.
               </Text>{" "}
-              projetos
+              
             </Text>
             <Text type="body1" color="grey2">
-              Explore meu repositorio publico e teste meus projetos!
+              Apaixonado por tecnologia e programação, eu crio aplicações Web e Server Side, confira abaixo algumas teclogias que domino!
             </Text>
             <HeaderButtonsArea>
               <Button
